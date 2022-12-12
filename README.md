@@ -1,2 +1,2 @@
-# studing
+# Studing
 Casi di studio 
