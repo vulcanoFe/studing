@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Html React</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -13,10 +14,25 @@
   <main>
     <h1>Titolo sito</h1>
     <section>
-      <img src="./assets/img/moto.jpg" alt="immagine" height="600">
+      <div class="grid-container">
+        <!-- post 1 -->
+        <div class="grid-item">
+          <img src="./assets/img/moto1.jpg" alt="immagine" height="400">
+          <div class="contenitore_bottone_like" data-postid="1"></div>
+        </div>
+        <!-- post 2 -->
+        <div class="grid-item">
+          <img src="./assets/img/moto2.jpg" alt="immagine" height="400">
+          <div class="contenitore_bottone_like" data-postid="2"></div>
+        </div>
+        <!-- post 3 -->
+        <div class="grid-item">
+          <img src="./assets/img/moto3.jpg" alt="immagine" height="400">
+          <div class="contenitore_bottone_like" data-postid="3"></div>
+        </div>
+      </div>
     </section>
   </main>
-  <div id="contenitore_bottone_like"></div>
 
   <!-- Carica React. -->
   <!-- Nota: quando rilasci il codice in produzione, sostituisci "development.js" con "production.min.js". -->
