@@ -13,11 +13,11 @@ function App() {
       <Navbar />
       <main className="content">
         <Routes>
-          <Route path="/" component={<Home />} exact />
-          <Route path="/all" component={AllUsers} exact />
-          <Route path="/add" component={AddUser} exact />
-          <Route path="/edit/:id" component={EditUser} exact />
-          <Route component={NotFound} />
+          <Route path="/" element={<Home />} exact />
+          <Route path="/all" element={<AllUsers />} exact />
+          <Route path="/add" element={<AddUser />} exact />
+          <Route path="/edit/:id" element={<EditUser />} exact />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </div>

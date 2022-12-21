@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } from '@material-ui/core';
 import { deleteUser ,getAllUsers } from '../service/api';
 import { Link } from 'react-router-dom';
@@ -37,11 +37,6 @@ const AllUsers = () => {
     setUser(response.data);
   }
 
-  const handleCancelClick = useCallback (
-    () => deleteData(id), 
-    [id]
-  );
-
   const deleteData = async (id) => {
     await deleteUser(id);
     getUsers();
@@ -70,7 +65,7 @@ const AllUsers = () => {
               <TableCell>{data.phone}</TableCell>
               <TableCell>
                 <Button variant="contained" color="primary" style={{margin: '0px 20px'}} component={Link} to={`/edit/${data.id}`}>Edit</Button>
-                <Button variant="contained" color="secondary" style={{margin: '0px 20px'}} onClick={handleCancelClick}>Cancel</Button>
+                <Button variant="contained" color="secondary" style={{margin: '0px 20px'}} onClick={() => deleteData(data.id)}>Cancel</Button>
               </TableCell>
             </TableRow>
           ))
