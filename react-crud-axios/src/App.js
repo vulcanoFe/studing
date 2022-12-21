@@ -5,20 +5,22 @@ import AllUsers from './Components/AllUser';
 import AddUser from './Components/AddUser';
 import EditUser from './Components/EditUser';
 import NotFound from './Components/NotFound';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <div className="app">
       <Navbar />
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/all" component={AllUsers} exact />
-        <Route path="/add" component={AddUser} exact />
-        <Route path="/edit/:id" component={EditUser} exact />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+      <main className="content">
+        <Routes>
+          <Route path="/" component={<Home />} exact />
+          <Route path="/all" component={AllUsers} exact />
+          <Route path="/add" component={AddUser} exact />
+          <Route path="/edit/:id" component={EditUser} exact />
+          <Route component={NotFound} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
